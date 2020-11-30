@@ -1,0 +1,184 @@
+@import "helpers/variables";
+@import "helpers/fonts";
+@import "helpers/reset";
+
+::selection {
+  color: white;
+  background: $primary;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  background: #f9fbfe;
+  min-height: 100vh;
+  .container {
+    max-width: 85%;
+    margin: auto;
+    padding: 30px 80px;
+    flex: 1 1 0%;
+  }
+}
+
+.textbox {
+  padding: 15px;
+  border: 2px solid #d9dbe4;
+  border-radius: 5px;
+  font-size: 16px;
+  color: $black;
+  &:focus {
+    border-color: $primary;
+  }
+}
+
+.textbox-primary {
+  border: none;
+  font-size: 28px;
+  font-weight: 800;
+  color: #2b3548;
+  &::placeholder {
+    color: #ccc;
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  label {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-red {
+  color: $red;
+}
+
+a {
+  &.btn-cancel {
+    font-weight: 600;
+    color: $gray;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.card {
+  margin: 20px 0 50px;
+  padding: 30px;
+  box-shadow: rgba(0, 38, 97, 0.15) 0px 3px 6px 0px,
+    rgba(0, 38, 97, 0.2) 0px 10px 30px -20px;
+  background: white;
+  border-radius: 8px;
+  .card-title {
+    margin-bottom: 25px;
+    &-text {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #757575;
+    }
+  }
+  .card-content {
+    margin-top: 10px;
+  }
+  .card-footer-action {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      max-width: 171px;
+    }
+  }
+}
+
+.badge {
+  font-size: 13px;
+  padding: 5px 7px;
+  font-weight: 600;
+  display: inline;
+  border-radius: 4px;
+  color: $gray;
+  background: rgb(156, 156, 156, 0.2);
+  &.badge-danger {
+    color: $red;
+    background: rgb(241, 40, 40, 0.3);
+  }
+  &.badge-primary {
+    color: $primary;
+    background: rgb(6, 91, 194, 0.3);
+  }
+}
+
+.header-profile {
+  display: flex;
+  align-items: center;
+  .header-profile-avatar {
+    width: 40px;
+    height: 40px;
+    background: #2b3548;
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+    margin-right: 14px;
+    font-weight: 700;
+  }
+  .header-profile-detail {
+    display: flex;
+    flex-direction: column;
+    p {
+      font-size: 13px;
+      margin-top: 3px;
+      color: $gray;
+    }
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+.light {
+  font-weight: 400;
+}
+
+// .radio-button-container {
+//   position: relative;
+//   width: 25px;
+//   height: 25px;
+//   input {
+//     position: absolute;
+//     opacity: 0;
+//   }
+//   span {
+//     position: absolute;
+//     display: inline-block;
+//     background: $primary;
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 50%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     &::after {
+//       content: "";
+//       background: $primary;
+//       border-radius: 50%;
+//       width: 11px;
+//       height: 11px;
+//       border: 3px solid white;
+//     }
+//   }
+// }

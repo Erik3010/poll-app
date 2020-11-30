@@ -1,0 +1,11 @@
+@mixin breakpoint($type) {
+  @if $type == md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $type == sm {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+}

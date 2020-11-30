@@ -1,0 +1,17 @@
+@mixin font($font_file, $font_type) {
+  @font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-"+$font_file+"-slnt=0.ttf");
+    font-weight: $font_type;
+  }
+}
+
+@include font("Thin", 100);
+@include font("ExtraLight", 200);
+@include font("Light", 300);
+@include font("Regular", "normal");
+@include font("Medium", 500);
+@include font("SemiBold", 600);
+@include font("Bold", 700);
+@include font("ExtraBold", 800);
+@include font("Black", 900);
