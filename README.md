@@ -1,5 +1,7 @@
 # Poll App
 
+Here is the [API repository](https://github.com/Erik3010/LKSN2020-Server-API)
+
 ## Project setup
 ```
 npm install
