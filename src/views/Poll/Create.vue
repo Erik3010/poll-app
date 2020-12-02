@@ -25,6 +25,16 @@
             ></textarea>
           </div>
           <div class="form-group">
+            <label for="deadline">Deadline</label>
+            <input 
+              class="textbox" 
+              type="datetime-local" 
+              name="deadline" 
+              id="deadline"
+              v-model="poll.deadline"
+            >
+          </div>
+          <div class="form-group">
             <label for="choices" class="choice-label">Choice</label>
             <div class="choice-list">
               <div
@@ -73,11 +83,10 @@ export default {
       poll: {
         title: "",
         description: "",
+        deadline: "",
         choices: [
-          "choice pertama gan",
-          "chocie kedua gan",
-          "chocie ketiga gan",
-          "chocie keempat gan",
+          "",
+          "",
           "",
         ],
       },
@@ -148,7 +157,7 @@ export default {
     }
     .choice-label {
       margin: {
-        bottom: 0;
+        bottom: 5px;
         top: 10px;
       }
     }
