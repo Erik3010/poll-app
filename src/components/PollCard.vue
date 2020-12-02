@@ -46,7 +46,7 @@
             </div>
             <div class="poll-choices-list-item-info">
               <div>{{ choice.choice }}</div>
-              <div class="poll-choices-list-item-info-result" v-if="isVoted">
+              <div class="poll-choices-list-item-info-result" v-show="isVoted">
                 <div class="poll-choices-list-item-info-result-bar">
                   <div 
                     class="poll-choices-list-item-info-result-bar-fill" 
@@ -85,7 +85,6 @@ export default {
     return {
       choiceChoosed: null,
       loading: false,
-      pollIsVoted: false,
     }
   },
   computed: {
@@ -100,22 +99,22 @@ export default {
     calculateResult(poll = this.poll) {
       const totalPoint = poll.result.reduce((total, result) => total + result.point, 0);
 
-      this.$nextTick(() => {
+      setTimeout(() => {
         poll.choices.forEach(choice => {
           let choiceBarFill = this.$refs[`choice-${choice.id}-bar-fill`];
           let choiceBarText = this.$refs[`choice-${choice.id}-bar-text`];          
-
+  
           if(choiceBarFill === undefined && choiceBarText === undefined) return;
           choiceBarFill = choiceBarFill[0];
           choiceBarText = choiceBarText[0];
-
+  
           let choicePoint = poll.result.find(result => result.choice_id == choice.id).point;
-
+  
           let point = this.calculatePercent(choicePoint, totalPoint);
           choiceBarFill.style.width = `${point}%`;
           choiceBarText.innerHTML = `${point}%`;
         })
-      })
+      }, 200)
     },
     isFloat(value) {
       return value % 1 !== 0;
