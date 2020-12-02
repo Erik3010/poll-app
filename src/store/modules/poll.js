@@ -42,6 +42,14 @@ export default {
           });
       });
     },
+    createPoll({ commit }, poll) {
+      return new Promise((resolve, reject) => {
+        axios
+          .post(`${env.url}/poll`)
+          .then((res) => resolve(res))
+          .catch((err) => reject(err));
+      });
+    },
     vote({ commit, dispatch }, { pollId, choiceId }) {
       return new Promise((resolve, reject) => {
         axios
