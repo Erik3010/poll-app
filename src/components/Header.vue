@@ -7,16 +7,28 @@
                         <h1>Poll<span class="text-primary">.io</span></h1>
                     </div>
                     <ul class="menu">
-                        <li>
+                        <li class="menu-profile">
                             <div class="header-profile">
                                 <div class="header-profile-avatar">{{ initialName }}</div>
                                 <div class="header-profile-detail">
                                     <h4>{{ user.username }}</h4>
                                 </div>
                             </div>
+                            <div class="header-profile-dropdown">
+                                <div class="dropdown-label">Settings</div>
+                                <a href="#" class="dropdown-link">Lihat Profile</a>
+                                <a href="#" class="dropdown-link">Edit Profile</a>
+                                <a href="#" class="dropdown-link">Ganti Password</a>
+                                <div class="dropdown-line"></div>
+                                <div class="dropdown-label">Polling</div>
+                                <a href="#" class="dropdown-link">Polling Saya</a>
+                                <a href="#" class="dropdown-link">Voting Saya</a>
+                                <div class="dropdown-line"></div>
+                                <a @click="logout" class="dropdown-link logout-link">Logout</a>
+                            </div>
                         </li>
                         <!-- <li><Button>Login</Button></li> -->
-                        <li><Button :loading="isLoading" @click.native="logout" class="btn-danger">Logout</Button></li>
+                        <!-- <li><Button :loading="isLoading" @click.native="logout" class="btn-danger">Logout</Button></li> -->
                     </ul>
                 </nav>
             </div>
@@ -61,7 +73,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
-    height: 80px;
+    // height: 80px;
     position: fixed;
     top: 0;
     left: 0;
@@ -70,8 +82,12 @@ header {
     background: white;
     z-index: 99;
     // padding: 0 80px;
-    *:not(.logo):not(button):not(.header-profile-avatar):not(.header-profile-detail) {
-        height: 100%;
+    padding: 1rem 0;
+    .container {
+      padding: 0px 80px;
+    }
+    *:not(.logo):not(button):not(.header-profile-avatar):not(.header-profile-detail):not(.header-profile-dropdown) {
+        // height: 100%;
         display: flex;
         align-items: center;
     }
@@ -84,9 +100,9 @@ header {
         }
         li {
             padding: 0 25px;
-        }
-        button {
-            width: 120px;
+            button {
+                width: 120px;
+            }
         }
     }
 }

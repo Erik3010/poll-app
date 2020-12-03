@@ -119,31 +119,93 @@ a {
   }
 }
 
-.header-profile {
-  display: flex;
-  align-items: center;
-  .header-profile-avatar {
-    width: 40px;
-    height: 40px;
-    background: #2b3548;
-    border-radius: 100%;
-    color: white;
+.card-title,
+.menu-profile {
+  position: relative;
+  &:hover .header-profile-dropdown {
+    display: block;
+    animation: dropdownAnimation 0.4s cubic-bezier(0.73, 0.005, 0.22, 1);
+  }
+  .header-profile {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: white;
-    margin-right: 14px;
-    font-weight: 700;
-  }
-  .header-profile-detail {
-    display: flex;
-    flex-direction: column;
-    p {
-      font-size: 13px;
-      margin-top: 3px;
-      color: $gray;
+    .header-profile-avatar {
+      width: 40px;
+      height: 40px;
+      background: #2b3548;
+      border-radius: 100%;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: white;
+      margin-right: 14px;
+      font-weight: 700;
     }
+    .header-profile-detail {
+      display: flex;
+      flex-direction: column;
+      p {
+        font-size: 13px;
+        margin-top: 3px;
+        color: $gray;
+      }
+    }
+  }
+  .header-profile-dropdown {
+    display: none;
+    box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.05);
+    background: white;
+    padding: 1rem 1.25rem;
+    position: absolute;
+    top: 120%;
+    width: 15rem;
+    border: 1px solid rgb(228, 228, 231);
+    border-radius: 0.5rem;
+    .dropdown-label {
+      color: rgb(62, 69, 67);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .dropdown-link {
+      display: inline-block;
+      font-size: 14px;
+      margin: 0.5rem 0;
+      color: #616161;
+      line-height: 1.6;
+      cursor: pointer;
+      &.logout-link {
+        background: $red;
+        padding: 0.5rem 1rem;
+        color: white;
+        border-radius: 0.35rem;
+        &:hover {
+          color: white;
+          background: #dc2121;
+        }
+      }
+      &:hover {
+        color: $primary;
+      }
+    }
+    .dropdown-line {
+      height: 1px;
+      width: 100%;
+      background: rgb(228, 228, 231);
+      margin: 1rem 0;
+    }
+  }
+}
+
+@keyframes dropdownAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.98) translateY(-0.6em);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
 }
 
