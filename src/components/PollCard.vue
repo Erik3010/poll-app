@@ -20,7 +20,7 @@
       </div>
       <div class="poll-description">
         <div class="poll-description-title">
-          <h4>Description</h4>
+          <!-- <h4>Description</h4> -->
         </div>
         <p>{{ poll.description }}</p>
       </div>
@@ -189,7 +189,7 @@ export default {
         font-size: 14px;
       }
       font-size: 14px;
-      margin: 15px 0 20px;
+      margin: 5px 0 30px;
       color: $gray;
     }
     .poll-choices {
