@@ -60,9 +60,9 @@ export default {
         border-radius: 100%;
         width: 20px;
         height: 20px;
-        border: 3px solid #fff;
+        border: 2px solid #fff;
         margin: auto;
-        border-top-color: #a7a7a7;
+        border-top-color: transparent !important;
         transition: .3s ease;
     }
     .loading-circle {
